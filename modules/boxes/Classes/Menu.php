@@ -157,7 +157,7 @@ class Menu
 
                     // If Admin add general Management-Links
                     if ($auth['type'] > 2) {
-                        $adminIcons = $this->box->LinkItem('index.php?mod=install&amp;action=mod_cfg&amp;module='. $module, t('Mod-Konfig'), 'admin', t('Dieses Modul verwalten'));
+                        $adminIcons = $this->box->LinkItem('index.php?mod=install&amp;action=mod_cfg&amp;module='. $module, t('Mod-Konfig'), 'admin list-group-item list-group-item-secondary', t('Dieses Modul verwalten'));
                         $this->box->Row('<span class="AdminIcons">'. $adminIcons .'</span>');
                     }
                 }

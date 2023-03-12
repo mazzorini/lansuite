@@ -54,7 +54,6 @@
 </style>
 </head>
 
-
 <body onload="BodyOnload(1)" {$MainJS}>
   <a name="top"></a>
   <span id="LSloading" class="loading"></span>
@@ -70,14 +69,28 @@
   {/if}
   
   <div id="{$MainContentStyleID}">
-    {$MainFrameworkmessages}
-    {$MainContent}
-    <br />
-    <div id="Footer">{$Footer}</div>
+    <div class="Layout">
+      <div class="Layout-main border">
+        {$MainFrameworkmessages}
+        {$MainContent}
+      </div>
+    
+      <div class="Layout-sidebar border">
+        <div id="BoxesLeft">{$MainLeftBox}</div>
+        {if !$IsMobileBrowser}<div id="BoxesRight">{$MainRightBox}</div>{/if}
+      </div>
+    </div>
+
+
+
+
+
+
+    <div id="Footer" class="col-12">{$Footer}</div>
     {$MainDebug}
   </div>
-  <div id="BoxesLeft">{$MainLeftBox}</div>
-  {if !$IsMobileBrowser}<div id="BoxesRight">{$MainRightBox}</div>{/if}
+  
+ 
   {$EndJS}
   </body>
   </html>

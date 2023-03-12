@@ -15,7 +15,7 @@ namespace LanSuite\Module\Discord;
 class Discord {
 
     // Storage for the discord server id
-    private $discordServerId = '';
+    private $discordServerId = '190044684674924544';
     
 
     

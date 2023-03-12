@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+<head>
+  <title>{$MainTitle}</title>
+  {$main_header_metatags}
+  <meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="expires" content="900" />  
+	<meta name="description" content="Multigamingclan mit Sitz auf der Alb"/>
+	<meta name="keywords" content="Silent Knights, SK!, LAN-Party, LAN, Games"/>
+  {$main_header_sitereload}
+  <!-- {$main_header_cssfiles} -->
+  <!--Google font-->
+  <link href="https://fonts.googleapis.com/css?family=K2D:300,400,500,700,800" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="design/{$Design}/style.css" />
+  <link rel="stylesheet" type="text/css" href="design/{$Design}/discord.css" />
+
+  <link rel="stylesheet" type="text/css" href="design/{$Design}/lansuite.css" />
+  <link rel="stylesheet" type="text/css" href="design/{$Design}/bootstrap.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+  {if $IsMobileBrowser}<link rel="stylesheet" type="text/css" href="design/{$Design}/style_mobile.css" />{/if}
+  {$main_header_csscode} 
+
+  {$main_header_jsfiles}
+
+  {$main_header_jscode}
+  <script language="javascript" type="text/javascript" src="design/{$Design}/bootstrap.bundle.min.js"></script>
+ 
+  
+  
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RDF-Datei" href="ext_inc/newsfeed/news.xml" />
+  <!--[if lte IE 6]>
+  <style type="text/css">
+  {literal}div#Content { width: 70%; }{/literal}
+  </style>
+  <![endif]-->
+
+  <style type="text/css">
+  section {
+  padding: 20px;
+}
+
+.announcement-top-bar {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.announcement-top-bar p {
+  margin: 0;
+}
+
+.announcement-top-bar.alert-dismissible .close {
+  top: 50%;
+  transform: translateY(-55%);
+}
+</style>
+
+<script type='text/javascript'>
+$(document).ready(function() {
+    $('[data-toggle=tooltip]').tooltip();
+}); 
+</script>
+
+</head>
+
+
+<body onload="BodyOnload(1)" {$MainJS}>
+
+
+  <header class="p-3 bg-dark text-white">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">     
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+        </ul>       
+
+        <div class="text-end">          
+          <a href="index.php?mod=signon" class="btn btn-warning">Sign-up</a>
+          <a href="index.php?mod=usrmgr&action=pwrecover" class="btn btn-light">Lost PW</a>
+          {if $MainLogout}<a href="index.php?mod=auth&action=logout" class="btn btn-danger">Logout</a>{/if}
+        </div>
+      </div>
+    </div>
+  </header>
+  <header class="py-3 mb-4 border-bottom">
+    <div class="container d-flex flex-wrap justify-content-center">
+      <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
+        <img src="design/simple/images/logo-new_small.png" width="70"  alt="">
+        <span class="fs-4" style="margin-left:50px;">SK LAN</span>
+      </a>
+      <div id="Banner" style="margin-top: 40px;">{$MainBanner}</div>
+      <div id="DateLogout" style="float:right;">
+        {$smarty.now|date_format:"%d.%m.%Y"}
+      </div>
+    </div>
+  </header>
+
+<!--Header Section-->
+<div class="alert alert-primary alert-dismissible fade show announcement-top-bar" role="alert">
+  <p id="{$MainContentStyleID}" class="d-none d-md-block">{$MainFrameworkmessages}
+    {$MainDebug}  </p>
+  
+</div>
+
+<!--Features Section-->
+<section class="py-6" style="height: 100%;">
+  <div class="container-flex">
+    <div class="row">
+        <div class="col-md-2 mx-auto">
+          {$MainLeftBox}
+        </div>
+        <div class="col-md-8 mx-auto">
+          {$MainContent}     
+        </div>
+        
+        <div class="col-md-2 mx-auto"> 
+          {if !$IsMobileBrowser}<div id="BoxesRight">{$MainRightBox}</div>{/if}
+        </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!--Games-->
+<section class="bg-dark pb-6" style="height: 100%;">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-8 mx-auto">
+            <li class="list-inline-item"><a href="/silk.html">In Erinnerung <span class="text-danger" data-feather="heart" width="28" height="28"></span>Silkworm</a></li>   
+          </div>
+      </div>
+  </div>
+</section>
+
+  
+  
+</section>
+
+<!--footer-->
+
+<div class="container">
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <p class="col-md-4 mb-0 text-muted">{$main_footer_version} &copy;2001-{$main_footer_date} Silent Knights</p>
+
+    <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+      <img src="design/simple/images/logo-new_small.png" width="100"  alt="">
+    </a>
+
+    <ul class="nav col-md-4 justify-content-end">
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+      <li class="nav-item"><a href="index.php?mod=info2&action=show_info2&id={$main_footer_impressum}" class="nav-link px-2 text-muted">Impressum</a></li>
+    </ul>
+  </footer>
+  <div class="col-12 text-center">
+    {$Footer}
+</div>
+</div
+
+{$EndJS}
+</body>
+</html>
+
+
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.7.3/feather.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+<script src="js/scripts.js"></script>
+</body>
+</html>

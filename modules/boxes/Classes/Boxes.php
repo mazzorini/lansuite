@@ -39,15 +39,15 @@ class Boxes
         $class = '';
         switch ($level) {
             case 0:
-                $class = "box_entry";
+                $class = "list-group-item list-group-item-action";
                 break;
             case 1:
-                $class = "box_entry_lvl_1";
+                $class = "list-group-item list-group-item-secondary";
                 break;
         }
 
         if ($highlighted) {
-            $class .= "_active";
+            $class .= " active";
         }
 
         if (strip_tags($caption) == $caption) {
@@ -58,15 +58,16 @@ class Boxes
         if ($link != "") {
             $box_row_hint = '';
             if ($hint) {
-                $box_row_hint = '<span class="infobox">'. $func->AllowHTML($hint) .'</span>';
+                $box_row_hint = $func->AllowHTML($hint);
             }
-            $tmp_link = '<a href="'.$func->AllowHTML($link).'" class="'.$link_class.'">'.$caption.$box_row_hint.'</a>';
+            $tmp_link = '<a href="'.$func->AllowHTML($link).'" class="'.$link_class.' '.$class.'" data-bs-toggle="tooltip" data-toggle="tooltip" data-bs-placement="top" title="'.$box_row_hint.'">'.$caption.'</a>';
         }
 
         if ($id) {
             $id = ' id="'. $id .'"';
         }
-        $this->box_rows .= '<li'. $id .' class="'. $class .'">'. $tmp_link ."</li>\n";
+        //$this->box_rows .= '<li'. $id .' class="'. $class .'">'. $tmp_link ."</li>\n";
+        $this->box_rows .= '<li'. $id .'>'. $tmp_link ."</li>\n";
     }
 
     /**
@@ -82,9 +83,9 @@ class Boxes
         if ($link != "") {
             $box_row_hint = '';
             if ($hint) {
-                $box_row_hint = '<span class="infobox">'. $func->AllowHTML($hint) .'</span>';
+                $box_row_hint = $func->AllowHTML($hint);
             }
-            $out = '<a href="'.$link.'" class="'.$class.'">'.$caption.$box_row_hint.'</a>';
+            $out = '<a href="'.$link.'" class="'.$class.'" data-bs-toggle="tooltip" data-toggle="tooltip" data-bs-placement="top" title="'.$box_row_hint.'">'.$caption.'</a>';
             return $out;
         } else {
             return $caption;
